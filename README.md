@@ -148,8 +148,8 @@ Com decisão ótima, o **Manchester tem a mesma BER do BPSK** (`Q(√(2·Eb/N0))
 ## 6. Divisão de responsabilidades da dupla 
 | Integrante | Responsabilidades |
 
-| Eduardo | geração de mensagem ASCII e bits, codificação de linha Manchester e AMI, modelagem dos canais AWGN e de rajadas, teste de consistência |
+| Eduardo | geração de mensagem ASCII e bits, codificação de linha Manchester e AMI, modelagem dos canais AWGN e de rajadas, modulações BPSK, QPSK e 16-QAM e demodulação |
 
-| Arthur | modulações BPSK, QPSK e 16-QAM e demodulação, métricas e curvas teóricas, planejamento experimental, estatística e gráficos |
+| Arthur | teste de consistência, métricas e curvas teóricas, planejamento experimental, estatística e gráficos |
 
 | Ambos | análise dos resultados, documentação e apresentação |

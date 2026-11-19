@@ -1,0 +1,36 @@
+Mensagem de teste: "Hello, World!" (104 bits)
+Teste A: canal IDEAL (sem ruído).   Teste B: AWGN e rajadas com Eb/N0 = 30 dB, 1000 repetições.
+
+Esquema               Canal      Tentativas   Recuperações exatas  Bits errados  Resultado
+BPSK                  IDEAL               1                     1             0  OK
+BPSK                  AWGN             1000                  1000             0  OK
+BPSK                  RAJADA           1000                  1000             0  OK
+BPSK + Manchester     IDEAL               1                     1             0  OK
+BPSK + Manchester     AWGN             1000                  1000             0  OK
+BPSK + Manchester     RAJADA           1000                  1000             0  OK
+QPSK                  IDEAL               1                     1             0  OK
+QPSK                  AWGN             1000                  1000             0  OK
+QPSK                  RAJADA           1000                  1000             0  OK
+QPSK + Manchester     IDEAL               1                     1             0  OK
+QPSK + Manchester     AWGN             1000                  1000             0  OK
+QPSK + Manchester     RAJADA           1000                  1000             0  OK
+16QAM                 IDEAL               1                     1             0  OK
+16QAM                 AWGN             1000                  1000             0  OK
+16QAM                 RAJADA           1000                  1000             0  OK
+16QAM + Manchester    IDEAL               1                     1             0  OK
+16QAM + Manchester    AWGN             1000                  1000             0  OK
+16QAM + Manchester    RAJADA           1000                  1000             0  OK
+Manchester (banda base)IDEAL               1                     1             0  OK
+Manchester (banda base)AWGN             1000                  1000             0  OK
+AMI (banda base)      IDEAL               1                     1             0  OK
+AMI (banda base)      AWGN             1000                  1000             0  OK
+
+RESULTADO GERAL: APROVADO – mensagem recuperada integralmente em todos os casos.
+
+Observações / possíveis divergências:
+  - O 16-QAM exige múltiplo de 4 bits e o QPSK de 2: se a mensagem não for múltipla, o transmissor
+    acrescenta bits de preenchimento (zeros) e o receptor os descarta; sem isso haveria erro de tamanho.
+  - Em Eb/N0 alto a probabilidade de erro não é exatamente zero, apenas desprezível (ex.: BER 16-QAM
+    teórica a 30 dB ≈ 2.0e-176); com 1000 repetições de 104 bits
+    não se espera observar nenhum erro.
+  - No canal de rajadas, mesmo a 30 dB a rajada (-10 dB) deixa Eb/N0 efetivo em 20 dB: ainda sem erros.

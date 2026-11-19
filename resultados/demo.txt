@@ -1,0 +1,89 @@
+==============================================================================
+1) MENSAGEM -> ASCII -> BITS
+==============================================================================
+Mensagem original : Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+Códigos ASCII     : [82, 101, 100, 101, 115, 32, 100, 101, 32, 67, 111, 109] ...  (89 caracteres)
+Binário (1ºs 8 B) : 01010010 01100101 01100100 01100101 01110011 00100000 01100100 01100101 ...  (712 bits)
+
+Codificação de LINHA × codificação de CORREÇÃO de erros:
+  - Linha: define COMO os bits viram níveis de sinal (sincronismo, sem DC, detecção de
+    violações). Não corrige erros e não acrescenta proteção algébrica à informação.
+  - Correção de erros (FEC: Hamming, Reed-Solomon, convolucional...): acrescenta bits
+    redundantes calculados dos dados, permitindo detectar E corrigir erros. Aqui NÃO usada.
+
+==============================================================================
+2) CODIFICAÇÃO DE LINHA (primeiros 8 bits)
+==============================================================================
+Bits      : [0, 1, 0, 1, 0, 0, 1, 0]
+Manchester: [-1, 1, 1, -1, -1, 1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1]
+AMI       : [0, 1, 0, -1, 0, 0, 1, 0]
+
+==============================================================================
+3) ENLACE COMPLETO – canal AWGN, Eb/N0 = 4 dB
+==============================================================================
+[BPSK]  bits errados: 9/712  BER=0.0126
+   posições (índice do bit): [88, 179, 193, 293, 336, 350, 393, 572, 636]
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Redes de Co?putadores = ?NISINOS - Tvabalh?"II: c/dificacao de linha e eodulacag digital.
+[BPSK + Manchester]  bits errados: 6/712  BER=0.0084  violações Manchester detectadas: 10
+   posições (índice do bit): [135, 233, 302, 325, 378, 481]
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Redes de Computaeores - UNISI?OS - Trcbahho II:?codificacao $e linha e modulacao digital.
+[QPSK]  bits errados: 3/712  BER=0.0042
+   posições (índice do bit): [52, 121, 174]
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Redes le Comput!dores"- UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+[QPSK + Manchester]  bits errados: 9/712  BER=0.0126  violações Manchester detectadas: 20
+   posições (índice do bit): [100, 104, 124, 202, 275, 303, 466, 513, 554]
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Redes de Comx?tidores - UnISINOS -0Tr`balho II: codificacaO de l)nha E modulacao digital.
+[16QAM]  bits errados: 33/712  BER=0.0463
+   posições (índice do bit): [9, 16, 19, 28, 78, 93, 103, 114, 116, 127, 129, 133, 141, 209, 225, 254, 297, 339, 385, 391] ...
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: R%?ms de Aoiqu\` kres - UN?S?NOQ - Tr!balh? II: "/di&icac!o`te!linha d iod}l`cqo `igytal.
+[16QAM + Manchester]  bits errados: 35/712  BER=0.0492  violações Manchester detectadas: 88
+   posições (índice do bit): [19, 48, 51, 52, 131, 172, 177, 184, 194, 220, 227, 248, 260, 280, 299, 301, 307, 315, 355, 381] ...
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Retes ?e Computatores(m?uNI[YNO?(- ?rurqlho YI:$sodifisacao dg ?i~la e mot?lasio`dio{val.
+Nota: na demo, Eb/N0 é a energia por bit TRANSMITIDO. Em '+ Manchester' cada bit de informação
+usa 2 chips; se o Eb/N0 fosse contado por bit de INFORMAÇÃO, Manchester teria 3 dB a menos por chip.
+As 'violações' (chips iguais '00'/'11') são erros DETECTADOS pela própria codificação de linha.
+
+==============================================================================
+3) ENLACE COMPLETO – canal RAJADA, Eb/N0 = 4 dB
+==============================================================================
+[BPSK]  bits errados: 24/712  BER=0.0337
+   posições (índice do bit): [110, 144, 275, 283, 284, 301, 309, 315, 325, 326, 334, 336, 420, 484, 527, 531, 535, 537, 538, 573] ...
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Redes de Compwtado?es - UNISINOS -0Lrefqjj? II: codinicacao le lioy? e iodu,!cao digital?
+[BPSK + Manchester]  bits errados: 11/712  BER=0.0154  violações Manchester detectadas: 14
+   posições (índice do bit): [177, 179, 252, 263, 282, 301, 305, 338, 607, 610, 688]
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Redes de Computadores } UNISINO[!- tre"alhO II: codificacao de linha e modumAcao digit?l.
+[QPSK]  bits errados: 6/712  BER=0.0084
+   posições (índice do bit): [2, 8, 124, 260, 356, 618]
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: r?des de Computidores - UNISINOS(- Trabalho AI: codificacao de linha e modulaCao digital.
+[QPSK + Manchester]  bits errados: 16/712  BER=0.0225  violações Manchester detectadas: 26
+   posições (índice do bit): [69, 102, 171, 236, 259, 260, 398, 482, 542, 543, 545, 547, 548, 550, 575, 665]
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: Redes de$Comrutadores0- UNISIFOS8- Trabalho II: cmdificacao De linhbze lodulacao di'ital.
+[16QAM]  bits errados: 45/712  BER=0.0632
+   posições (índice do bit): [0, 24, 33, 34, 43, 48, 97, 117, 133, 162, 204, 246, 250, 254, 261, 263, 273, 277, 280, 282] ...
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: ?ed??0?e Com0upa`oreS - UFISINMq%-d?R??adho ?M:$!oekficaca? ?e0?i~ha e mmdwlacag digita,>
+[16QAM + Manchester]  bits errados: 48/712  BER=0.0674  violações Manchester detectadas: 109
+   posições (índice do bit): [2, 5, 101, 126, 130, 131, 148, 149, 159, 165, 168, 171, 172, 174, 176, 182, 183, 191, 200, 202] ...
+   TX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+   RX: vedes de ComtutcTo~dw??!U?K[InOW$- Tr?falio"II: godinica?a?%ee linhe e(mot?lace??digi|s|.
+Nota: na demo, Eb/N0 é a energia por bit TRANSMITIDO. Em '+ Manchester' cada bit de informação
+usa 2 chips; se o Eb/N0 fosse contado por bit de INFORMAÇÃO, Manchester teria 3 dB a menos por chip.
+As 'violações' (chips iguais '00'/'11') são erros DETECTADOS pela própria codificação de linha.
+
+==============================================================================
+4) CODIFICAÇÃO DE LINHA PURA EM BANDA BASE (Eb/N0 = 8 dB, AWGN)
+==============================================================================
+[Manchester] bits errados: 0/712  BER=0.0000
+   RX: Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.
+[AMI] bits errados: 1/712  BER=0.0014  violações bipolares detectadas: 1
+   RX: Redes de Computadores - UNISINOs - Trabalho II: codificacao de linha e modulacao digital.

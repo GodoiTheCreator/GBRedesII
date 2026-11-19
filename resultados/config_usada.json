@@ -1,0 +1,46 @@
+{
+  "mensagem_demo": "Redes de Computadores - UNISINOS - Trabalho II: codificacao de linha e modulacao digital.",
+  "mensagem_teste": "Hello, World!",
+  "seed": 20261119,
+  "ebn0_db": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "n_bits": 1000000,
+  "n_repeticoes": 10,
+  "modulacoes": [
+    "BPSK",
+    "QPSK",
+    "16QAM"
+  ],
+  "linhas": [
+    "Manchester",
+    "AMI"
+  ],
+  "rajada": {
+    "p_gb": 0.005,
+    "p_bg": 0.1,
+    "penalidade_db": 10.0
+  },
+  "mensagem_exp": {
+    "n_tentativas": 2000,
+    "n_repeticoes": 5
+  },
+  "demo_ebn0_db": 4.0,
+  "demo_seed": 7,
+  "consistencia_ebn0_db": 30.0,
+  "consistencia_repeticoes": 1000,
+  "constelacao_ebn0_db": 12.0,
+  "constelacao_n_simbolos": 3000
+}

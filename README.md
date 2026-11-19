@@ -4,7 +4,7 @@ Trabalho II de Redes de Computadores – UNISINOS (Prof. Cristiano Bonato Both).
 Simulador ponta a ponta em Python: **mensagem ASCII → bits → codificação de linha → modulação → canal ruidoso → demodulação → decodificação → mensagem**, com cálculo de BER e eficiência espectral e um plano experimental reproduzível.
 
 - **Dupla:** Arthur Alves Pasini e Eduardo Godoi
-- **Vídeo (≤ 5 min):** 
+- **Vídeo (≤ 5 min):** https://drive.google.com/file/d/1EWykF3MRn6prbwnQsM6VGZzrr2jy-ln4/view?usp=sharing
 
 ---
 
